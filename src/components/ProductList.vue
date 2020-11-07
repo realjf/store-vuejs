@@ -8,7 +8,10 @@
                 {{p.price | currency}}
             </span>
         </h4>
-        <div class="card-text bg-white p-1">{{p.description}}</div>
+        <div class="card-text bg-white p-1">
+            {{p.description}}
+            <button class="btn btn-success btn-sm float-right" v-on:click="handleProductAdd(p)">Add To Cart</button>
+        </div>
     </div>
     <page-controls />
 </div>
@@ -16,7 +19,8 @@
 
 <script>
 import {
-    mapGetters
+    mapGetters,
+    mapMutations // 导入
 } from "vuex";
 import PageControls from "./PageControls";
 
@@ -36,6 +40,15 @@ export default {
                 style: "currency",
                 currency: "USD"
             }).format(value);
+        }
+    },
+    methods: {
+        ...mapMutations({
+            addProduct: "cart/addProduct"
+        }),
+        handleProductAdd(product) {
+            this.addProduct(product);
+            this.$router.push("/cart");
         }
     }
 }

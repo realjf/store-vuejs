@@ -3,6 +3,7 @@
     <div class="row">
         <div class="col bg-dark text-white">
             <a class="navbar-brand">SPORTS STORE</a>
+            <cart-summary />
         </div>
     </div>
     <div class="row">
@@ -22,10 +23,12 @@
 // 导入组件文件
 import ProductList from "./ProductList"
 import CategoryControls from "./CategoryControls";
+import CartSummary from "./CartSummary";
 export default {
     components: {
         ProductList,
-        CategoryControls
+        CategoryControls,
+        CartSummary
     }
 }
 </script>
