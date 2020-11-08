@@ -12,7 +12,7 @@
 import {
     mapState,
     mapGetters,
-    mapMutations
+    mapActions
 } from "vuex";
 export default {
     computed: {
@@ -20,7 +20,7 @@ export default {
         ...mapGetters(["categories"])
     },
     methods: {
-        ...mapMutations(["setCurrentCategory"])
+        ...mapActions(["setCurrentCategory"])
     }
 }
 </script>
