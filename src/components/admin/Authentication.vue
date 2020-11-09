@@ -38,8 +38,8 @@ export default {
     },
     data: function () {
         return {
-            username: "admin",
-            password: "secret",
+            username: null,
+            password: null,
             showFailureMessage: false,
         }
     },
